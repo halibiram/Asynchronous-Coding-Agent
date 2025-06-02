@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>com.example.AsyncCodingAgent</id>
+    <name>Asynchronous Coding Agent</name>
+    <version>1.0.0</version>
+    <vendor email="support@example.com" url="http://www.example.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    An intelligent Android Studio plugin that functions as an asynchronous coding agent.
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.androidstudio</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add extensions here -->
+        <applicationService serviceImplementation="com.example.asyncagent.AsyncCodingAgentPlugin"/>
+        <toolWindow id="AsyncCodingAgent" anchor="right" factoryClass="com.example.asyncagent.ui.AsyncAgentToolWindow"/>
+        <applicationService serviceImplementation="com.example.asyncagent.settings.AgentSettings"/>
+    </extensions>
+
+    <actions>
+        <!-- Add actions here -->
+    </actions>
+</idea-plugin>
